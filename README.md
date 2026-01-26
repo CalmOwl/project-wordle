@@ -8,57 +8,12 @@ In this project, we'll recreate a popular online word game, Wordle:
 
 In Wordle, users have 6 attempts to guess a 5-letter word. You're helped along the way by ruling out letters that aren't in the word, and being told whether the correct letters are in the correct location or not.
 
-## Getting Started
 
-This project is created with [Parcel](https://parceljs.org/), a modern JS build tool. It's intended to be run locally, on your computer, using Node.js and NPM.
 
-If you're not sure how to run a local development server, or if you run into some trouble, check out the [“Local Development” instructions](https://courses.joshwcomeau.com/joy-of-react/project-wordle/03-dev-server). It includes all the info you need to know, including troubleshooting common issues.
-
-> **NOTE: This project is tricky!**
->
-> This project is meant to be challenging, because I believe that the best way to learn is to be challenged. Depending on your experience level, though, you may feel like it's unreasonably difficult.
->
-> This workshop is split into 5 exercises, and each exercise has a solution video. If you spend more than 10 minutes stuck on an exercise, I encourage you to **watch the solution.** If things are still unclear after that, please ask questions in the Discord community!
-
-## Exercise 1: GuessInput
-
-First thing’s first: we need a way to submit guesses!
-
-In the standard Wordle game, a global event listener registers keypresses. This isn't very accessible, and so we're going to do things a little bit differently.
-
-We'll render a little form that holds a text input:
-
-![Screenshot showing the guess input UI](docs/guess-input.png)
-
-Your job in this first exercise is to create a new component for this UI, and render it inside the `Game` component.
-
-Here's a minimal representation of the markup expected to be produced by this new component:
-
+## NEW COMPONENT
 ```html
-<form class="guess-input-wrapper">
-  <label for="guess-input">Enter guess:</label>
-  <input id="guess-input" type="text" />
-</form>
+npm run new-component NameOfTheComponent
 ```
-
-**NOTE:** This is the _minimal_ markup required, for the styles to be applied and for accessibility. **It isn't set in stone!** Feel free to make tweaks in order to match all of the acceptance criteria below.
-
-Here's a quick screen recording of the expected result:
-
-![Screen recording showing the guess being entered. It gets logged to the console, and erased from the input](docs/submit-guess.gif)
-
-**Acceptance Criteria:**
-
-- Create a new component.
-  - Don't forget, you can use an NPM script to generate the scaffolding for you! We learn how to do this in the [“Getting Started” video](https://courses.joshwcomeau.com/joy-of-react/project-wordle/04-overview)
-- This component should render a `<form>` tag, including a label and a text input.
-- The text input should be controlled by React state.
-- When the form is submitted:
-  - The entered value should be logged to the console (for now).
-  - The input should be reset to an empty string.
-- **The user's input should be converted to ALL UPPERCASE.** No lower-case letters allowed.
-- The input should have a minimum and maximum length of 5.
-  - **NOTE:** The `minLength` validator is a bit funky; you may wish to use the `pattern` attribute instead. This is discussed in more detail on the [Solution page](https://courses.joshwcomeau.com/joy-of-react/project-wordle/06-solution#an-alternative-to-minlength).
 
 ## Exercise 2: Keeping track of guesses
 
