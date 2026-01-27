@@ -15,31 +15,6 @@ In Wordle, users have 6 attempts to guess a 5-letter word. You're helped along t
 npm run new-component NameOfTheComponent
 ```
 
-## Exercise 2: Keeping track of guesses
-
-Instead of obliterating the user's guess, let's add it to a list, so we can show the user all of their previously-submitted guesses!
-
-For now, we aren't worrying about any game-logic stuff. We're still setting up the scaffolding, getting some of the component + DOM structure in place.
-
-Our goal in this exercise is to render each of the user's guesses:
-
-![Screen recording showing each guess printed out above the text input from the last exercise](docs/printed-word-list.gif)
-
-And here's an example of the expected DOM structure:
-
-```html
-<div class="guess-results">
-  <p class="guess">FIRST</p>
-  <p class="guess">GUESS</p>
-</div>
-```
-
-**Acceptance Criteria:**
-
-- A new component should be created, to render previous guesses.
-- When the user submits their guess, that value should be rendered within this new component.
-- There should be no key warnings in the console!
-
 ## Exercise 3: Guess slots
 
 In the real Wordle game, the initial screen shows 6 rows of 5 squares:
