@@ -12,11 +12,19 @@ console.info({ answer });
 
 function Game() {
   const [guessList, setGuessList] = React.useState([]);
+  const [checkList, setCheckList] = React.useState([]);
 
   return (
     <>
-      <GuessResults guessList={guessList} />
-      <GuessInput guessList={guessList} setGuessList={setGuessList} />
+      <GuessResults
+        guessList={guessList}
+        checkList={checkList} />
+      <GuessInput
+        guessList={guessList}
+        setGuessList={setGuessList}
+        checkList={checkList}
+        setCheckList={setCheckList}
+        answer={answer} />
     </>
   );
 }

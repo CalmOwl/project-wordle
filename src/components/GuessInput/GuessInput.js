@@ -1,6 +1,7 @@
 import React from 'react';
+import { checkGuess } from '../../game-helpers';
 
-function GuessInput({guessList, setGuessList}) {
+function GuessInput({ guessList, setGuessList, checkList, setCheckList, answer }) {
   const [guess, setGuess] = React.useState('');
 
   function handleSubmit(event) {
@@ -10,6 +11,10 @@ function GuessInput({guessList, setGuessList}) {
     setGuessList([...nextGuessList, guess]);
     console.log(guess);
     setGuess('');
+
+    const nextCheckList = [...checkList];
+    const check = checkGuess(guess, answer);
+    setCheckList([...nextCheckList, check]);
   }
 
   return (
