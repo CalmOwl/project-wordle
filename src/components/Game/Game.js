@@ -3,8 +3,8 @@ import React from 'react';
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
 import { checkGuess, getBannerState } from '../../game-helpers';
-import { GuessResults } from '../GuessResults';
-import { GuessInput } from '../GuessInput';
+import GuessResults from '../GuessResults';
+import GuessInput from '../GuessInput';
 import { Banner } from '../Banner';
 
 // Pick a random word on every pageload.
