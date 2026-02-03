@@ -1,7 +1,8 @@
 import React from 'react';
-import { checkGuess } from '../../game-helpers';
+import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
-function GuessInput({ guessList, setGuessList, checkList, setCheckList, answer }) {
+
+function GuessInput({ guessList, setGuessList, answer }) {
   const [guess, setGuess] = React.useState('');
 
   function handleSubmit(event) {
@@ -9,12 +10,7 @@ function GuessInput({ guessList, setGuessList, checkList, setCheckList, answer }
 
     const nextGuessList = [...guessList];
     setGuessList([...nextGuessList, guess]);
-    console.log(guess);
     setGuess('');
-
-    const nextCheckList = [...checkList];
-    const check = checkGuess(guess, answer);
-    setCheckList([...nextCheckList, check]);
   }
 
   return (
@@ -32,6 +28,8 @@ function GuessInput({ guessList, setGuessList, checkList, setCheckList, answer }
         pattern='[A-Za-z]{5}'
         title='5 letters exactly'
         maxLength={5}
+        required
+        disabled={guessList[guessList.length - 1] === answer || guessList.length === NUM_OF_GUESSES_ALLOWED}
         style={{ textTransform: 'uppercase' }}
         onChange={(event) => setGuess(event.target.value.toUpperCase())}
       >

@@ -3,6 +3,8 @@
  * solving algorithm!
  */
 
+import { NUM_OF_GUESSES_ALLOWED } from "./constants";
+
 export function checkGuess(guess, answer) {
   // This constant is a placeholder that indicates we've successfully
   // dealt with this character (it's correct, or misplaced).
@@ -52,4 +54,28 @@ export function checkGuess(guess, answer) {
   }
 
   return result;
+}
+
+export function getBannerState(answer, guessList) {
+  if (guessList[guessList.length - 1] === answer) {
+    return (
+      {
+        mood: "happy",
+        message: (
+          <p>
+            <strong>Congratulations!</strong> Got it in <strong>{`${guessList.length} ${guessList.length === 1 ? "guess" : "guesses"}`}</strong>.
+          </p>
+        )
+      }
+    );
+  } else if (guessList.length === NUM_OF_GUESSES_ALLOWED) {
+    return (
+      {
+        mood: "sad",
+        message: (
+          <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
+        )
+      }
+    );
+  }
 }
